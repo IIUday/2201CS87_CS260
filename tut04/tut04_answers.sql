@@ -10,3 +10,5 @@ select first_name,last_name,department_name from employees NATURAL JOIN departme
 select project_name from projects where budget>90000;
 select sum(budget) from projects;
 select first_name,last_name,salary from employees where salary>60000;
+select project_name,end_date from projects;
+select department_name from departments where location="North India";
