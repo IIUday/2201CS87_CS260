@@ -13,7 +13,6 @@ select first_name,last_name,age from students NATURAL JOIN enrollments GROUP BY 
 select student_id,course_name, AVERAGE(grade) from enrollments NATURAL JOIN courses GROUP BY student_id,course_name;
 select first_name,last_name,course_name from students NATURAL JOIN enrollments NATURAL JOIN courses where (grade="A" OR grade="AB");
 select course_name,first_name,last_name from courses NATURAL JOIN instructors where last_name LIKE 'S%';
-select std.first_name,std.last_name,std.age from students as std NATURAL JOIN enrollments where course_id=(select course_id from courses where instructor_id=(select instructor_id from instructors where instructor_name="Dr. Akhil'));
+select std.first_name,std.last_name,std.age from students as std NATURAL JOIN enrollments where course_id=(select course_id from courses where instructor_id=(select instructor_id from instructors where instructor_name="Dr. Akhil"));
 select course_name,grade from enrollments NATURAL JOIN courses ORDER BY grade LIMIT 1;
 select first_name,last_name,age,course_name from students NATURAL JOIN enrollments NATURAL JOIN courses ORDER BY course_name;
-  
